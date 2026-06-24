@@ -416,6 +416,9 @@ class GeometryDashActivity : AppCompatActivity(), Cocos2dxHelper.Cocos2dxHelperL
                 )
 
                 if (copiedGeodePath.exists()) {
+                    // android 17 fix
+                    copiedGeodePath.setWritable(false)
+
                     println("Loading Geode from ${externalGeodePath.name}")
                     System.load(copiedGeodePath.path)
                     return
